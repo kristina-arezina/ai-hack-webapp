@@ -7,5 +7,5 @@ Example: 2020/10/08/adding-react
 
 ## 💻 Available Scripts
 
-In the project directory run `npm start` <br/>
+In the project directory run `npm run start` <br/>
 This runs the app in the development mode.
