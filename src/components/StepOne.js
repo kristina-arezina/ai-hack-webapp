@@ -72,6 +72,7 @@ export default function StepOne() {
       </AppBar>
       <TabPanel value={value} index={0}>
         <Paper elevation={3}>
+        <h1 style={{paddingTop:"2%", textAlign:"left", paddingLeft:"3%"}}>Instructions</h1>
             <Instructions/>
         </Paper>
       </TabPanel>
