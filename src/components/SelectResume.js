@@ -6,10 +6,13 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
+import Button from '@material-ui/core/Button';
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    width:"90%",
   },
   formControl: {
     margin: theme.spacing(3),
@@ -36,24 +39,30 @@ export default function CheckboxesGroup() {
     <div className={classes.root}>
       <FormControl required error={error} component="fieldset" className={classes.formControl}>
         <FormLabel component="legend">Pick two</FormLabel>
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox checked={gilad} onChange={handleChange} name="gilad" />}
-            label="Candidate 1"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={jason} onChange={handleChange} name="jason" />}
-            label="Candidate 2"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={antoine} onChange={handleChange} name="antoine" />}
-            label="Candidate 3"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={kristina} onChange={handleChange} name="kristina" />}
-            label="Candidate 4"
-          />
-        </FormGroup>
+          <FormGroup>
+            <FormControlLabel
+              control={<Checkbox checked={gilad} onChange={handleChange} name="gilad" />}
+              label={
+                <Button style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
+                <p>Candidate 1</p>
+                 <OpenInNewIcon/>
+               </Button>
+              }
+            >
+            </FormControlLabel>
+            <FormControlLabel
+              control={<Checkbox checked={jason} onChange={handleChange} name="jason" />}
+              label="Candidate 2"
+            />
+            <FormControlLabel
+              control={<Checkbox checked={antoine} onChange={handleChange} name="antoine" />}
+              label="Candidate 3"
+            />
+            <FormControlLabel
+              control={<Checkbox checked={kristina} onChange={handleChange} name="kristina" />}
+              label="Candidate 4"
+            />
+          </FormGroup>
         <FormHelperText>You can display an error</FormHelperText>
       </FormControl>
     </div>
