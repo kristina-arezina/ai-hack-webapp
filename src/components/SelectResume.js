@@ -12,9 +12,8 @@ import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
-  },
+  }
 }));
 
 export default function SelectResume() {
@@ -43,6 +42,7 @@ export default function SelectResume() {
           <ListItem key={value} role={undefined} dense button onClick={handleToggle(value)}>
             <ListItemIcon>
               <Checkbox
+                style={{color: "#29b6f6"}}
                 edge="start"
                 checked={checked.indexOf(value) !== -1}
                 tabIndex={-1}
