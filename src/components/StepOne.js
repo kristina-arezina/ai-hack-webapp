@@ -45,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  Tabs: {
+      fontColor: "#002171"
+  }
 }));
 
 export default function StepOne() {
@@ -57,11 +60,12 @@ export default function StepOne() {
 
   return (
     <div className={classes.root}>
-      <AppBar style={{backgroundColor: "#0077c2"}} position="static">
+      <AppBar style={{backgroundColor: "#80d6ff"}} position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab style={{color: "#000a12"}} label="Item One" {...a11yProps(0)} />
+        //   Change disabled when do the stuff we want it to do
+          <Tab style={{color: "#000a12"}} label="Item Two" {...a11yProps(1)} disabled={false} />
+          <Tab style={{color: "#000a12"}} label="Item Three" {...a11yProps(2)} disabled={true}/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
