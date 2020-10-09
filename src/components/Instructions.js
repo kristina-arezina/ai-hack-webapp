@@ -16,9 +16,6 @@ const useStyles = makeStyles((theme) => ({
   backButton: {
     marginRight: theme.spacing(1),
   },
-  completed: {
-    display: 'inline-block',
-  },
   instructions: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
@@ -87,20 +84,6 @@ export default function Instructions() {
     setActiveStep(step);
   };
 
-  const handleComplete = () => {
-    const newCompleted = new Set(completed);
-    newCompleted.add(activeStep);
-    setCompleted(newCompleted);
-
-    /**
-     * Sigh... it would be much nicer to replace the following if conditional with
-     * `if (!this.allStepsComplete())` however state is not set when we do this,
-     * thus we have to resort to not being very DRY.
-     */
-    if (completed.size !== totalSteps()) {
-      handleNext();
-    }
-  };
 
   const handleReset = () => {
     setActiveStep(0);
@@ -157,16 +140,7 @@ export default function Instructions() {
                 Next
               </Button>
 
-              {activeStep !== steps.length &&
-                (completed.has(activeStep) ? (
-                  <Typography variant="caption" className={classes.completed}>
-                    Step {activeStep + 1} already completed
-                  </Typography>
-                ) : (
-                  <Button variant="contained" color="primary" onClick={handleComplete}>
-                    {completedSteps() === totalSteps() - 1 ? 'Finish' : 'Complete Step'}
-                  </Button>
-                ))}
+            
             </div>
           </div>
         )}
