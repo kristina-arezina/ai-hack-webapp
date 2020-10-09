@@ -23,17 +23,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+  return ['✅', '🤖', '😃'];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return 'Step 1: Select campaign settings...';
+      return 'Step 1: Select two resumes.';
     case 1:
-      return 'Step 2: What is an ad group anyways?';
+      return 'Step 2: Let the AI work.';
     case 2:
-      return 'Step 3: This is the bit I really care about!';
+      return 'Step 3: See which candidate is more qualified on paper.';
     default:
       return 'Unknown step';
   }
@@ -47,10 +47,6 @@ export default function Instructions() {
 
   const totalSteps = () => {
     return getSteps().length;
-  };
-
-  const isStepOptional = (step) => {
-    return step === 1;
   };
 
   const completedSteps = () => {
@@ -100,9 +96,6 @@ export default function Instructions() {
         {steps.map((label, index) => {
           const stepProps = {};
           const buttonProps = {};
-          if (isStepOptional(index)) {
-            buttonProps.optional = <Typography variant="caption">Optional</Typography>;
-          }
           return (
             <Step key={label} {...stepProps}>
               <StepButton
@@ -139,8 +132,6 @@ export default function Instructions() {
               >
                 Next
               </Button>
-
-            
             </div>
           </div>
         )}
