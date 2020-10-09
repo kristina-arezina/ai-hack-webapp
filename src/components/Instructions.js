@@ -8,7 +8,8 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: '99%',
+    padding: "1%"
   },
   button: {
     marginRight: theme.spacing(1),
@@ -80,7 +81,6 @@ export default function Instructions() {
     setActiveStep(step);
   };
 
-
   const handleReset = () => {
     setActiveStep(0);
     setCompleted(new Set());
@@ -92,6 +92,7 @@ export default function Instructions() {
 
   return (
     <div className={classes.root}>
+
       <Stepper alternativeLabel nonLinear activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps = {};

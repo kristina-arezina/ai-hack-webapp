@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Instructions from "./Instructions"
+import Paper from '@material-ui/core/Paper';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -63,14 +64,16 @@ export default function StepOne() {
     <div className={classes.root}>
       <AppBar style={{backgroundColor: "#80d6ff"}} position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab style={{color: "#000a12"}} label="Item One" {...a11yProps(0)} />
+          <Tab style={{color: "#000a12"}} label="Choose Resumes" {...a11yProps(0)} />
         //   Change disabled when do the stuff we want it to do
           <Tab style={{color: "#000a12"}} label="Item Two" {...a11yProps(1)} disabled={false} />
           <Tab style={{color: "#000a12"}} label="Item Three" {...a11yProps(2)} disabled={true}/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Instructions/>
+        <Paper elevation={3}>
+            <Instructions/>
+        </Paper>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
