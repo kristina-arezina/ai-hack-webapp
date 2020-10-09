@@ -55,7 +55,7 @@ export default function CheckboxesGroup() {
             <FormControlLabel
               control={<Checkbox checked={jason} onChange={handleChange} name="jason" />}
               label={
-                <Button style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
+                <Button href="https://www.w3schools.com/html/html_links.asp" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
                 <p>Candidate 2</p>
                  <OpenInNewIcon/>
                </Button>
