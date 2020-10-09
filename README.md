@@ -1,11 +1,11 @@
-## Web App For Project Themis
+## ☀️ Web App For Project Themis
 
-## Contributing
+## 🧠 Contributing
 
-Please make branchs using the date and a decription of what the branch will do.
+Please make branchs using the date and a decription of what the branch will do.<br/>
 Example: 2020/10/08/adding-react
 
-## Available Scripts
+## 💻 Available Scripts
 
-In the project directory run `npm start` 
+In the project directory run `npm start` <br/>
 This runs the app in the development mode.
