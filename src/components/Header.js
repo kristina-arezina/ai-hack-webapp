@@ -9,6 +9,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  header: {
+    padding:"10px",
+    backgroundColor: "#003c8f",
+    zIndex:100,
+    position: "relative"
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -19,12 +25,12 @@ export default function Header() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className={classes.header} position="static">
         <Toolbar variant="dense">
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           </IconButton>
           <Typography variant="h6" color="inherit">
-            Photos
+          Project Themis
           </Typography>
         </Toolbar>
       </AppBar>
