@@ -81,7 +81,7 @@ export default function StepOne() {
             <Instructions/>
         </Paper>
         
-        <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"76%"}} elevation={3}>
+        <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
           <h1 style={{ textAlign:"left"}}>Select Resumes</h1>
           <SelectResume/>
           <Button style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
