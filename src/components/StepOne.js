@@ -10,7 +10,8 @@ import Instructions from "./Instructions"
 import Paper from '@material-ui/core/Paper';
 import SelectResume from "./SelectResume";
 import Button from '@material-ui/core/Button';
-
+import SimpleBackdrop from "./Backdrop"
+import RankingList from "./List";
 
 
 function TabPanel(props) {
@@ -71,7 +72,7 @@ export default function StepOne() {
           <Tab style={{color: "#000a12"}} label="Choose Resumes" {...a11yProps(0)} />
         //   Change disabled when do the stuff we want it to do
           <Tab style={{color: "#000a12"}} label="Item Two" {...a11yProps(1)} disabled={false} />
-          <Tab style={{color: "#000a12"}} label="Item Three" {...a11yProps(2)} disabled={true}/>
+          <Tab style={{color: "#000a12"}} label="Item Three" {...a11yProps(2)} disabled={false}/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -89,10 +90,10 @@ export default function StepOne() {
         </Paper>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <SimpleBackdrop/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <RankingList/>
       </TabPanel>
     </div>
   );
