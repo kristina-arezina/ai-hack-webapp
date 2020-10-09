@@ -8,7 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Instructions from "./Instructions"
 import Paper from '@material-ui/core/Paper';
-import SelectResume from "./SelectResume"
+import SelectResume from "./SelectResume";
+import Button from '@material-ui/core/Button';
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -77,9 +80,12 @@ export default function StepOne() {
             <Instructions/>
         </Paper>
         
-        <Paper style={{paddingLeft:"3%"}} elevation={3}>
-          <h1 style={{paddingTop:"2%", textAlign:"left"}}>Select Resumes</h1>
+        <Paper style={{ padding:"2%", marginTop: "2%", width:"60%"}} elevation={3}>
+          <h1 style={{ textAlign:"left"}}>Select Resumes</h1>
           <SelectResume/>
+          <Button style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
+            Done
+          </Button>
         </Paper>
       </TabPanel>
       <TabPanel value={value} index={1}>
