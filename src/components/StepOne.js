@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -10,8 +10,9 @@ import Instructions from "./Instructions"
 import Paper from '@material-ui/core/Paper';
 import SelectResume from "./SelectResume";
 import Button from '@material-ui/core/Button';
-import SimpleBackdrop from "./Backdrop"
 import RankingListItem from "./ListItem";
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 function TabPanel(props) {
@@ -55,11 +56,23 @@ const useStyles = makeStyles((theme) => ({
   Tabs: {
       fontColor: "#002171"
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  }
 }));
 
 export default function StepOne() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [open, setOpen] = React.useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpen(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -90,9 +103,11 @@ export default function StepOne() {
         </Paper>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <SimpleBackdrop/>
+        <Backdrop className={classes.backdrop} open={open}>
+          <CircularProgress color="inherit" />
+        </Backdrop>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
         <RankingListItem/>
       </Paper>
