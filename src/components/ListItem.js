@@ -4,10 +4,8 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import Filter1Icon from '@material-ui/icons/Filter1';
 import Filter2Icon from '@material-ui/icons/Filter2';
 import List from '@material-ui/core/List';
@@ -17,7 +15,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: "100%",
+    maxWidth: "80%",
+    minWidth: "70%",
     marginTop: "10px"
   },
   media: {
@@ -59,7 +58,11 @@ export default function RankingListItem() {
       </CardActions>
     </Card>
     </ListItem>
-    <Divider variant="inset" component="li" />
+
+    <ListItem alignItems="flex-start">
+    <ListItemAvatar>
+          <Filter2Icon/>
+    </ListItemAvatar>
     <Card className={classes.root}>
       <CardActionArea>
         <CardContent>
@@ -77,6 +80,7 @@ export default function RankingListItem() {
         </Button>
       </CardActions>
     </Card>
+    </ListItem>
     </List>
   );
 }
