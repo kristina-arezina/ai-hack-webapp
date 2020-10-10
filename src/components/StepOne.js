@@ -84,7 +84,7 @@ export default function StepOne() {
         <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
           <h1 style={{ textAlign:"left"}}>Select Resumes</h1>
           <SelectResume/>
-          <Button style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
+          <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
             Done
           </Button>
         </Paper>
