@@ -16,23 +16,23 @@ const useStyles = makeStyles((theme) => ({
 export default function SimpleBackdrop() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  
-  // const handleToggle = () => {
-  //   setOpen(!open);
-  // };
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpen(false);
     }, 1000);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    }
   }, []);
 
   return (
     // <Button variant="outlined" color="primary" onClick={handleToggle}>
     //     Show backdrop
     //   </Button>
-    <div>
+    <div
+      setValue={2}
+    >
       <Backdrop className={classes.backdrop} open={open}>
         <CircularProgress color="inherit" />
       </Backdrop>

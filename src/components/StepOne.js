@@ -11,8 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import SelectResume from "./SelectResume";
 import Button from '@material-ui/core/Button';
 import RankingListItem from "./ListItem";
-import Backdrop from '@material-ui/core/Backdrop';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Backdrop from "./Backdrop"
 
 
 function TabPanel(props) {
@@ -84,8 +83,8 @@ export default function StepOne() {
       <AppBar style={{backgroundColor: "#80d6ff"}} position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab style={{color: "#000a12"}} label="Choose Resumes" {...a11yProps(0)} />
-          <Tab style={{color: "#000a12"}} label="Item Two" {...a11yProps(1)} disabled={true} />
-          <Tab style={{color: "#000a12"}} label="Item Three" {...a11yProps(2)} disabled={false}/>
+          <Tab style={{color: "#000a12"}} label="AI Working" {...a11yProps(1)} disabled={true} />
+          <Tab style={{color: "#000a12"}} label="Find best candidate" {...a11yProps(2)} disabled={false}/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -103,13 +102,12 @@ export default function StepOne() {
         </Paper>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Backdrop className={classes.backdrop} open={open}>
-          <CircularProgress color="inherit" />
-        </Backdrop>
+        <Backdrop/>
+        <Button onClick={() => setValue(2)}>Done! See Your Results</Button>
       </TabPanel>
       <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
-        <RankingListItem/>
+        <RankingListItem />
       </Paper>
       </TabPanel>
     </div>
