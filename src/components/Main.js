@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -63,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Main() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const [isDisabled] = React.useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -74,10 +73,6 @@ export default function Main() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  const handleDisabled = (event, isDisabled) => {
-    this.setState({isDisabled: isDisabled});
-  }
 
   return (
     <div className={classes.root}>
@@ -97,7 +92,7 @@ export default function Main() {
         
         <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
           <h1 style={{ textAlign:"left"}}>Select Resumes</h1>
-          <SelectResume onChange={() => handleDisabled(this.props.error)}/>
+          <SelectResume/>
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
             Done
           </Button>

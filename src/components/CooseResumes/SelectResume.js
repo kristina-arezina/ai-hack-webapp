@@ -34,8 +34,8 @@ export default function CheckboxesGroup() {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
-  const { gilad, jason, antoine, kristina } = state;
-  const error = [gilad, jason, antoine, kristina].filter((v) => v).length !== 2;
+    const { gilad, jason, antoine, kristina } = state;
+    const error = [gilad, jason, antoine, kristina].filter((v) => v).length !== 2;
 
   return (
     <div className={classes.root}>
