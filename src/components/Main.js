@@ -6,13 +6,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Instructions from "./Instructions"
+import Instructions from "./CooseResumes/Instructions"
 import Paper from '@material-ui/core/Paper';
-import SelectResume from "./SelectResume";
+import SelectResume from "./CooseResumes/SelectResume";
 import Button from '@material-ui/core/Button';
-import RankingListItem from "./ListItem";
-import Backdrop from "./Backdrop"
-
+import RankingList from "./FindBestCandidate/RankingList";
+import Backdrop from "./AiWorking/Backdrop"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -61,10 +60,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function StepOne() {
+export default function Main() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  // const [ open, setOpen] = React.useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -76,7 +74,6 @@ export default function StepOne() {
     setValue(newValue);
   };
 
-  //   Change disabled when do the stuff we want it to do
   return (
     <div className={classes.root}>
       <AppBar style={{backgroundColor: "#80d6ff"}} position="static">
@@ -86,6 +83,7 @@ export default function StepOne() {
           <Tab style={{color: "#000a12"}} label="Find best candidate" {...a11yProps(2)} disabled={true}/>
         </Tabs>
       </AppBar>
+
       <TabPanel value={value} index={0}>
         <Paper elevation={3}>
           <h1 style={{paddingTop:"2%", textAlign:"left", paddingLeft:"3%"}}>Instructions</h1>
@@ -100,15 +98,17 @@ export default function StepOne() {
           </Button>
         </Paper>
       </TabPanel>
+
       <TabPanel value={value} index={1}>
         <Backdrop/>
         <Button style={{ padding:"2%"}} onClick={() => setValue(2)} variant="contained" color="primary" disableElevation>
           Done! See Your Results
         </Button>
       </TabPanel>
+      
       <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
-        <RankingListItem />
+        <RankingList />
       </Paper>
       </TabPanel>
     </div>

@@ -12,7 +12,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
-
 const useStyles = makeStyles({
   root: {
     maxWidth: "80%",
@@ -31,7 +30,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function RankingListItem() {
+export default function RankingList() {
   const classes = useStyles();
 
   return (

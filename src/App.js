@@ -1,5 +1,5 @@
 import React from 'react';
-import StepOne from "./components/StepOne";
+import Main from "./components/Main";
 import './App.css';
 import Header from "./components/Header"
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <StepOne/>
+      <Main/>
     </div>
   );
 }
