@@ -11,7 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import SelectResume from "./SelectResume";
 import Button from '@material-ui/core/Button';
 import SimpleBackdrop from "./Backdrop"
-import RankingList from "./List";
+import RankingListItem from "./ListItem";
 
 
 function TabPanel(props) {
@@ -93,7 +93,9 @@ export default function StepOne() {
         <SimpleBackdrop/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <RankingList/>
+      <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
+        <RankingListItem/>
+      </Paper>
       </TabPanel>
     </div>
   );

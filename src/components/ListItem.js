@@ -7,27 +7,42 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import Filter1Icon from '@material-ui/icons/Filter1';
+import Filter2Icon from '@material-ui/icons/Filter2';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: "100%",
+    marginTop: "10px"
   },
   media: {
-    height: 140,
+    height: 70,
+    width: "100%",
   },
+  list: {
+    width: '100%',
+  },
+  inline: {
+    display: 'inline',
+  }
 });
 
 export default function RankingListItem() {
   const classes = useStyles();
 
   return (
+    <List className={classes.root}>    
+    <ListItem alignItems="flex-start">
+    <ListItemAvatar>
+          <Filter1Icon/>
+    </ListItemAvatar>
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             Teo Mackenzie
@@ -43,5 +58,25 @@ export default function RankingListItem() {
         </Button>
       </CardActions>
     </Card>
+    </ListItem>
+    <Divider variant="inset" component="li" />
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Greg Davis 
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Ranked as the second the most qualified. 
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Resume
+        </Button>
+      </CardActions>
+    </Card>
+    </List>
   );
 }
