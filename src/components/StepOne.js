@@ -103,7 +103,9 @@ export default function StepOne() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Backdrop/>
-        <Button onClick={() => setValue(2)}>Done! See Your Results</Button>
+        <Button style={{ padding:"2%"}} onClick={() => setValue(2)} variant="contained" color="primary" disableElevation>
+          Done! See Your Results
+        </Button>
       </TabPanel>
       <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
