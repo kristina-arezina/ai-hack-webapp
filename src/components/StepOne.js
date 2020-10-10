@@ -64,11 +64,10 @@ const useStyles = makeStyles((theme) => ({
 export default function StepOne() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const [ open, setOpen] = React.useState(true);
+  // const [ open, setOpen] = React.useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setOpen(false);
     }, 500);
     return () => clearTimeout(timer);
   }, []);
