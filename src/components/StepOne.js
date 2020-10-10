@@ -71,7 +71,7 @@ export default function StepOne() {
       <AppBar style={{backgroundColor: "#80d6ff"}} position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab style={{color: "#000a12"}} label="Choose Resumes" {...a11yProps(0)} />
-          <Tab style={{color: "#000a12"}} label="Item Two" {...a11yProps(1)} disabled={false} />
+          <Tab style={{color: "#000a12"}} label="Item Two" {...a11yProps(1)} disabled={true} />
           <Tab style={{color: "#000a12"}} label="Item Three" {...a11yProps(2)} disabled={false}/>
         </Tabs>
       </AppBar>
