@@ -85,12 +85,12 @@ export default function Main() {
       </AppBar>
 
       <TabPanel value={value} index={0}>
-        <Paper elevation={3}>
+        <Paper style={{marginBottom:"5%"}} elevation={3}>
           <h1 style={{paddingTop:"2%", textAlign:"left", paddingLeft:"3%"}}>Instructions</h1>
             <Instructions/>
         </Paper>
         
-        <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
+        <Paper style={{ padding:"2%", marginLeft: "8%", marginRight: "8%", marginTop: "2%", width:"auto"}} elevation={3}>
           <h1 style={{ textAlign:"left"}}>Select Resumes</h1>
           <SelectResume/>
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
@@ -107,7 +107,7 @@ export default function Main() {
       </TabPanel>
 
       <TabPanel value={value} index={2} >
-      <Paper style={{ padding:"2%", marginLeft: "10%", marginRight: "10%", marginTop: "2%", width:"auto"}} elevation={3}>
+      <Paper style={{ padding:"2%", marginLeft: "5%", marginRight: "5%", marginTop: "2%", width:"auto"}} elevation={3}>
         <RankingList />
       </Paper>
       </TabPanel>

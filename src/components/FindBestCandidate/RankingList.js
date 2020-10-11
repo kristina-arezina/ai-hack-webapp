@@ -14,8 +14,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: "80%",
-    minWidth: "70%",
+    maxWidth: "90%",
+    minWidth: "90%",
     marginTop: "10px"
   },
   media: {
