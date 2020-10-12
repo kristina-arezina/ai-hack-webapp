@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -29,6 +30,7 @@ export default function Header() {
         <Toolbar variant="dense">
           <Typography>
             <Button href="https://project-themis.netlify.app/" style={{ backgroundColor: "Transparent",  overflow: "hidden", fontSize:"25px", fontFamily: 'Cormorant Garamond', padding:20 }}  color="inherit" variant="text">
+            <img style={{paddingRight:"2%"}} src="Light-removebg-preview.png" alt="logo" width="30" height="30"/>
               Project Themis
             </Button>
           </Typography>
