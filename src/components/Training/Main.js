@@ -103,6 +103,9 @@ export default function MainTrain() {
       <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "5%", marginRight: "5%", marginTop: "2%", width:"auto"}} elevation={3}>
         <TrainingChoose/>
+        <Button onClick={() => setValue(1)} style={{padding:"1%"}} variant="contained" color="primary">
+            Done
+        </Button>  
       </Paper>
       </TabPanel>
     </div>

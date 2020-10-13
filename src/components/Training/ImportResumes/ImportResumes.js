@@ -31,6 +31,7 @@ export default function CheckboxesGroup() {
   };
 
   return (
+    <span>
     <div className={classes.root}>
       <FormControl component="fieldset" className={classes.formControl}>
       <FormLabel component="legend">Gender</FormLabel>
@@ -58,9 +59,9 @@ export default function CheckboxesGroup() {
             >
             </FormControlLabel>
           </RadioGroup>
-        <FormHelperText>Please pick two resumes</FormHelperText>
-      </FormControl>
-    </div>
+      </FormControl> 
+    </div> 
+    </span>
   );
 }
 
