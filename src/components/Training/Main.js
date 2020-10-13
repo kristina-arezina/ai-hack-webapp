@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
-import SelectResume from "../CooseResumes/SelectResume";
+import TrainingChoose from "./ImportResumes/ImportResumes";
 import Button from '@material-ui/core/Button';
 import RankingList from "../FindBestCandidate/RankingList";
 import Backdrop from "../AiWorking/Backdrop"
@@ -86,8 +86,7 @@ export default function MainTrain() {
       <TabPanel value={value} index={0}>
         
         <Paper style={{ padding:"2%", marginLeft: "8%", marginRight: "8%", marginTop: "2%", width:"auto"}} elevation={3}>
-          <h1 style={{ textAlign:"left"}}>Select Resumes</h1>
-          <SelectResume/>
+          <h1 style={{ textAlign:"left"}}>Import Resumes</h1>
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
             Done
           </Button>
@@ -103,7 +102,7 @@ export default function MainTrain() {
 
       <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "5%", marginRight: "5%", marginTop: "2%", width:"auto"}} elevation={3}>
-        <RankingList />
+        <TrainingChoose/>
       </Paper>
       </TabPanel>
     </div>
