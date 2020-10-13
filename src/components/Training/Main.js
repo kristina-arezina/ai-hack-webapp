@@ -9,7 +9,7 @@ import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import TrainingChoose from "./ImportResumes/ImportResumes";
 import Button from '@material-ui/core/Button';
-import RankingList from "../FindBestCandidate/RankingList";
+import AddCSV from "./ImportResumes/AddCSV";
 import Backdrop from "../AiWorking/Backdrop"
 
 function TabPanel(props) {
@@ -87,6 +87,7 @@ export default function MainTrain() {
         
         <Paper style={{ padding:"2%", marginLeft: "8%", marginRight: "8%", marginTop: "2%", width:"auto"}} elevation={3}>
           <h1 style={{ textAlign:"left"}}>Import Resumes</h1>
+          <AddCSV/>
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
             Done
           </Button>
