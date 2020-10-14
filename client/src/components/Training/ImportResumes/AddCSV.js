@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { CSVReader } from 'react-papaparse'
+import Button from '@material-ui/core/Button';
 
 export default class AddCSV extends Component {
   state = {
@@ -66,9 +67,8 @@ export default class AddCSV extends Component {
         >
           <span>Drop CSV file here or click to upload.</span>
         </CSVReader>
-        <p>{this.state.response}</p>
         <form onSubmit={this.handleSubmit}>
-          <button type="submit">Submit</button>
+          <Button style={{marginBottom: "0%", padding:"1%", margin: "1%"}} variant="contained" type="submit">Submit Data</Button>
         </form>
         <p>{this.state.responseToPost}</p>
       </>

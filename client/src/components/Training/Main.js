@@ -89,7 +89,7 @@ export default function MainTrain() {
           <h1 style={{ textAlign:"left"}}>Import Resumes</h1>
           <AddCSV/>
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
-            Done
+            Go To Next Step
           </Button>
         </Paper>
       </TabPanel>

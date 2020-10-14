@@ -21,7 +21,7 @@ app.post('/api/world', (req, res) => {
 console.log('This is after the read call');
 
   res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
+    `We received your data, please click on the 'go to next step' button.`,
   );
 });
 
