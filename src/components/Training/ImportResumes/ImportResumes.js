@@ -33,7 +33,7 @@ export default function CheckboxesGroup() {
     <span>
     <div className={classes.root}>
       <FormControl component="fieldset" className={classes.formControl}>
-      <FormLabel component="legend">Gender</FormLabel>
+      <FormLabel component="legend">Choose the better candidate on paper</FormLabel>
       <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
             <FormControlLabel
             value="female"
