@@ -15,11 +15,8 @@ app.get('/api/hello', (req, res) => {
 app.post('/api/world', (req, res) => {
   console.log("req.body", req.body);
 
-  fs.readFile('resume-data.json', (err, data) => {
-    if (err) throw err;
-    let resume = JSON.parse(data);
-    console.log(resume);
-});
+  let data = JSON.stringify(req.body);
+  fs.writeFileSync('resume-data.json', data);
 
 console.log('This is after the read call');
 
