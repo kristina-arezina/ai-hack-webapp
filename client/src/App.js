@@ -13,7 +13,7 @@ export default class extends Component {
                       <Route exact path="/" render={props => (
                           <React.Fragment >
                             <Header/>
-                            <Main/>
+                            <Main style={{textAlign: "center"}}/>
                           </React.Fragment>
                       )}/>
                       <Route path="/training" render={props => (

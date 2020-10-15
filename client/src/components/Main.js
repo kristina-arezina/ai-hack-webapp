@@ -49,6 +49,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    margin: "auto",
     backgroundColor: theme.palette.background.paper,
   },
   Tabs: {

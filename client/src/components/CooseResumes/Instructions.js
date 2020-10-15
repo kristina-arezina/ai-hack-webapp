@@ -9,7 +9,8 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '99%',
-    padding: "1%"
+    padding: "1%",
+    textAlign: "center"
   },
   button: {
     marginRight: theme.spacing(1),
