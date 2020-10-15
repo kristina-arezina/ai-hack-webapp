@@ -34,7 +34,6 @@ export default class AddCSV extends Component {
       body: JSON.stringify({ post: this.state.data }),
     });
     const body = await response.text();
-    
     this.setState({ responseToPost: body });
   };
 
