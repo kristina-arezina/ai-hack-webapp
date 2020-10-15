@@ -11,30 +11,17 @@ export default class AddCSV extends Component {
     data: []
   };
 
-  componentDidMount() {
-
-    Axios({
-      method: "GET",
-      url: "http://localhost:5000/api/hello",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then(res => {
-      console.log(res.data);
-    });
-
-  //   this.callApi()
-  //     .then(res => this.setState({ response: res.express }))
-  //     .catch(err => console.log(err));
-  // }
-
-  // callApi = async () => {
-  //   const response = await fetch('/api/hello');
-  //   const body = await response.json();
-  //   if (response.status !== 200) throw Error(body.message);
-    
-  //   return body;
-  };
+  // componentDidMount() {
+  //   Axios({
+  //     method: "GET",
+  //     url: "http://localhost:5000/api/hello",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     }
+  //   }).then(res => {
+  //     console.log(res.data);
+  //   });
+  // };
 
   handleSubmit = async e => {
     e.preventDefault();
