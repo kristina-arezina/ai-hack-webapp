@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { CSVReader } from 'react-papaparse'
 import Button from '@material-ui/core/Button';
+import Axios from "axios";
 
 export default class AddCSV extends Component {
   state = {
@@ -11,17 +12,28 @@ export default class AddCSV extends Component {
   };
 
   componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
 
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
+    Axios({
+      method: "GET",
+      url: "http://localhost:5000/api/hello",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(res => {
+      console.log(res.data);
+    });
+
+  //   this.callApi()
+  //     .then(res => this.setState({ response: res.express }))
+  //     .catch(err => console.log(err));
+  // }
+
+  // callApi = async () => {
+  //   const response = await fetch('/api/hello');
+  //   const body = await response.json();
+  //   if (response.status !== 200) throw Error(body.message);
     
-    return body;
+  //   return body;
   };
 
   handleSubmit = async e => {
