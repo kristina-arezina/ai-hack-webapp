@@ -71,6 +71,7 @@ export default function MainTrain() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    // Make API call?
   };
 
   return (
