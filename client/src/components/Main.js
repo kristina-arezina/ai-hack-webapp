@@ -100,9 +100,9 @@ export default function Main() {
         </Paper>
       </TabPanel>
 
-      <TabPanel value={value} index={1}>
+      <TabPanel style={{textAlign: "center"}} value={value} index={1}>
         <Backdrop/>
-        <Button style={{ padding:"2%"}} onClick={() => setValue(2)} variant="contained" color="primary" disableElevation>
+        <Button style={{ padding:"2%", marginTop: "5%"}} onClick={() => setValue(2)} variant="contained" color="primary" disableElevation>
           Done! See Your Results
         </Button>
       </TabPanel>
