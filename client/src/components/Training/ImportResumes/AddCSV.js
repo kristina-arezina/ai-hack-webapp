@@ -54,8 +54,8 @@ export default class AddCSV extends Component {
     axios.post('http://localhost:6001/api/world', {
       data: this.state.data,
     })
-    .then((response) => {
-      console.log(response);
+    .then((res) => {
+      console.log(res);
     }, (error) => {
       console.log(error);
     });
