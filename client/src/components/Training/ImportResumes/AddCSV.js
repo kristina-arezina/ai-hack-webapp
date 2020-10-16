@@ -19,9 +19,10 @@ export default class AddCSV extends Component {
       data: this.state.data,
     })
     .then((res) => {
-      console.log(res.data);
-      let response = res.data
-      this.setState({ responseToPost: response });
+      console.log(res);
+
+      // let response = res.data
+      // this.setState({ responseToPost: response });
     }, (error) => {
       console.log(error);
     });
