@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
-import Axios from "axios";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   backdrop: {
@@ -15,15 +15,15 @@ export default function SimpleBackdrop() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
 
+  // get requst for data
   useEffect(() => {
-    Axios({
-      method: "GET",
-      url: "http://localhost:5000/api/hello",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then(res => {
-      console.log(res.data);
+    axios.get('https://api.github.com/users/mapbox')
+    .then((response) => {
+      console.log(response.data);
+      console.log(response.status);
+      console.log(response.statusText);
+      console.log(response.headers);
+      console.log(response.config);
     });
 
     const timer = setTimeout(() => {

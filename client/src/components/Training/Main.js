@@ -11,6 +11,7 @@ import TrainingChoose from "./ImportResumes/ImportResumes";
 import Button from '@material-ui/core/Button';
 import AddCSV from "./ImportResumes/AddCSV";
 import Backdrop from "../AiWorking/Backdrop"
+import axios from "axios";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -64,6 +65,10 @@ export default function MainTrain() {
   const [value, setValue] = React.useState(0);
 
   useEffect(() => {
+    axios.get('http://localhost:5000/api/hello')
+    .then((response) => {
+      response.send({ express: 'Hola From world' });
+    });
     const timer = setTimeout(() => {
     }, 500);
     return () => clearTimeout(timer);
