@@ -55,7 +55,7 @@ export default class AddCSV extends Component {
       data: this.state.data,
     })
     .then((res) => {
-      console.log(res);
+      console.log(res.data);
     }, (error) => {
       console.log(error);
     });
