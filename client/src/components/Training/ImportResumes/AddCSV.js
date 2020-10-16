@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { CSVReader } from 'react-papaparse'
 import Button from '@material-ui/core/Button';
+import axios from "axios";
 
 export default class AddCSV extends Component {
   state = {
@@ -28,6 +29,9 @@ export default class AddCSV extends Component {
     console.log('---------------------------')
     console.log("data", data)
     this.setState({ data: data })
+    axios.post('/api/world', {
+      name: data
+    })
     console.log('---------------------------')
   }
 
