@@ -12,6 +12,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,11 +37,29 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CheckboxesGroup(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState('id1');
+  const [value, setValue] = React.useState('0');
 
   const handleChange = (event) => {
     setValue(event.target.value);
     console.log("value", value)
+
+    let axiosConfig = {
+      headers: {
+          "Access-Control-Allow-Origin": "*",
+      }
+    };
+    
+    axios.post('http://localhost:6001/api/world', value, axiosConfig)
+    .then((res) => {
+      console.log("RESPONSE RECEIVED: ", res.data.ids[0]);
+      let id1 = res.data.ids[0]
+      console.log("id1", id1)
+      let id2 = res.data.ids[1]
+      console.log("id2", id2)
+    })
+    .catch((err) => {
+      console.log("AXIOS ERROR: ", err);
+    })
   };
 
   return (
@@ -50,7 +69,7 @@ export default function CheckboxesGroup(props) {
       <FormLabel component="legend">Choose the better candidate on paper</FormLabel>
       <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
             <FormControlLabel
-            value="id1"
+            value="0"
               control={<Radio style={{color: "#003c8f"}} name="gilad" />}
               label={
                 <Button disabled style={{textTransform: "capitalize"}} edge="end" aria-label="comments">
@@ -60,7 +79,7 @@ export default function CheckboxesGroup(props) {
             >
             </FormControlLabel>
             <FormControlLabel
-            value="id2"
+            value="1"
               control={<Radio style={{color: "#003c8f"}}  name="jason" />}
               label={
                 <Button disabled target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
