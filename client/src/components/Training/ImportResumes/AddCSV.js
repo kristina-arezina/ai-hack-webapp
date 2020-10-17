@@ -58,7 +58,7 @@ export default class AddCSV extends Component {
 
   handleClick = () => {
       // this.props.parentCallback(this.state.data[this.state.id1]);
-      this.props.parentCallback("hello from AddCSV");
+      this.props.parentCallback(this.state.data[this.state.id1]);
   }
 
   render() {

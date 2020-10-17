@@ -62,11 +62,11 @@ const useStyles = makeStyles((theme) => ({
 export default function MainTrain() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const [id1, setId1Data] = React.useState("");
+  const [id1, setId1Data] = React.useState('');
 
   const callbackFunction = (childData) => {
-    setId1Data(childData);
-    console.log("childData",childData)
+    setId1Data(childData.data[4]);
+    console.log("childData", childData.data[4])
   }
 
   useEffect(() => {
@@ -98,6 +98,7 @@ export default function MainTrain() {
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
             Go To Next Step
           </Button>
+          <p>{id1}</p>
         </Paper>
       </TabPanel>
 
@@ -111,10 +112,10 @@ export default function MainTrain() {
       <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "5%", marginRight: "5%", marginTop: "2%", width:"auto"}} elevation={3}>
         <TrainingChoose/>
-        <p>{id1}</p>
         <Button onClick={() => setValue(1)} style={{padding:"1%"}} variant="contained" color="primary">
             Done
         </Button>
+        <p>{id1}</p>
       </Paper>
       </TabPanel>
     </div>
