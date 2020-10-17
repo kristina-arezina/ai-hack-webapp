@@ -62,7 +62,7 @@ export default function CheckboxesGroup(props) {
             value="male"
               control={<Radio style={{color: "#003c8f"}}  name="jason" />}
               label={
-                <Button disabled href="https://www.w3schools.com/html/html_links.asp" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
+                <Button disabled target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
                 <p style={{color: "#003c8f"}}>Candidate 2</p>
                </Button>
               }
