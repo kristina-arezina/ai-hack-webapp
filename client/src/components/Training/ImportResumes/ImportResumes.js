@@ -94,7 +94,7 @@ export default function CheckboxesGroup(props) {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          HELLO
+          {props.id2}
           </Typography>
         </AccordionDetails>
       </Accordion>

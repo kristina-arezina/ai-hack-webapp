@@ -68,7 +68,6 @@ export default function MainTrain() {
   const callbackFunction = (childData) => {
     setId1Data(childData[0].data);
     setId2Data(childData[1].data);
-    // setId2Data(childData[1]);
     console.log("childData", childData[0].data)
     console.log("childData", childData[1].data)
   }
@@ -115,7 +114,7 @@ export default function MainTrain() {
 
       <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "5%", marginRight: "5%", marginTop: "2%", width:"auto"}} elevation={3}>
-        <TrainingChoose id1={id1}/>
+        <TrainingChoose id1={id1} id2={id2}/>
         <Button onClick={() => setValue(1)} style={{padding:"1%"}} variant="contained" color="primary">
             Done
         </Button>
