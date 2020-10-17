@@ -101,7 +101,6 @@ export default function MainTrain() {
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
             Go To Next Step
           </Button>
-          <p>{id1}</p>
         </Paper>
       </TabPanel>
 

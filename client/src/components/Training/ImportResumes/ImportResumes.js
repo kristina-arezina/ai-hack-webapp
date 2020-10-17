@@ -36,10 +36,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CheckboxesGroup(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState('female');
+  const [value, setValue] = React.useState('id1');
 
   const handleChange = (event) => {
     setValue(event.target.value);
+    console.log("value", value)
   };
 
   return (
@@ -49,7 +50,7 @@ export default function CheckboxesGroup(props) {
       <FormLabel component="legend">Choose the better candidate on paper</FormLabel>
       <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
             <FormControlLabel
-            value="female"
+            value="id1"
               control={<Radio style={{color: "#003c8f"}} name="gilad" />}
               label={
                 <Button disabled style={{textTransform: "capitalize"}} edge="end" aria-label="comments">
@@ -59,7 +60,7 @@ export default function CheckboxesGroup(props) {
             >
             </FormControlLabel>
             <FormControlLabel
-            value="male"
+            value="id2"
               control={<Radio style={{color: "#003c8f"}}  name="jason" />}
               label={
                 <Button disabled target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
