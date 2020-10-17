@@ -62,11 +62,11 @@ const useStyles = makeStyles((theme) => ({
 export default function MainTrain() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const [id1, setId1Data] = React.useState('');
+  const [id1, setId1Data] = React.useState([]);
 
   const callbackFunction = (childData) => {
-    setId1Data(childData.data[4]);
-    console.log("childData", childData.data[4])
+    setId1Data(childData.data);
+    console.log("childData", childData.data)
   }
 
   useEffect(() => {
