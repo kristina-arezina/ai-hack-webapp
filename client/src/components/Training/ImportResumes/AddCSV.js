@@ -10,7 +10,9 @@ export default class AddCSV extends Component {
     responseToPost: '',
     data: [],
     id1: '',
-    id2: ''
+    id2: '',
+    id1Data: '',
+    id2Data: '',
   };
 
   handleOnDrop = (data) => {
@@ -33,6 +35,7 @@ export default class AddCSV extends Component {
       let id1 = res.data.ids[0]
       console.log("id1", id1)
       let id2 = res.data.ids[1]
+      console.log("id2", id2)
       this.setState({id1:id1 })
       this.setState({id2:id2 })
     })
@@ -53,12 +56,15 @@ export default class AddCSV extends Component {
     console.log('---------------------------')
   }
 
-  sendData = () => {
-    this.props.parentCallback(this.state.data[this.state.id1]);
+  handleClick = () => {
+      // this.props.parentCallback(this.state.data[this.state.id1]);
+      this.props.parentCallback("hello from AddCSV");
   }
 
   render() {
     {console.log("this.state.id1", this.state.data[this.state.id1])}
+    {console.log("this.state.id2", this.state.data[this.state.id2])}
+
     return (
       <>
         <h5>Click and Drag Upload</h5>
@@ -71,7 +77,7 @@ export default class AddCSV extends Component {
           <span>Drop CSV file here or click to upload.</span>
         </CSVReader>
         <p>{this.state.responseToPost}</p>
-        <Button onClick={this.sendData}>Next</Button>
+        <Button onClick={this.handleClick}>Done</Button>
       </>
     )
   }
