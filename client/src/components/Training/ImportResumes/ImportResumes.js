@@ -79,7 +79,7 @@ export default function CheckboxesGroup(props) {
           <Typography className={classes.heading}>Candidate 1</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography style={{overflow: "scroll"}}>
             {props.id1}
           </Typography>
         </AccordionDetails>
@@ -98,8 +98,6 @@ export default function CheckboxesGroup(props) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-
-      
     </div> 
     </span>
   );
