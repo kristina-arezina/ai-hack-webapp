@@ -62,6 +62,10 @@ const useStyles = makeStyles((theme) => ({
 export default function MainTrain() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [id1, setId1Data] = React.useState("");
+
+  const callbackFunction = event => setId1Data(event.target.value);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -88,7 +92,7 @@ export default function MainTrain() {
         
         <Paper style={{ padding:"2%", marginLeft: "8%", marginRight: "8%", marginTop: "2%", width:"auto"}} elevation={3}>
           <h1 style={{ textAlign:"left"}}>Import Resumes</h1>
-          <AddCSV/>
+          <AddCSV parentCallback = {callbackFunction}/>
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
             Go To Next Step
           </Button>
@@ -104,7 +108,7 @@ export default function MainTrain() {
 
       <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "5%", marginRight: "5%", marginTop: "2%", width:"auto"}} elevation={3}>
-        <TrainingChoose/>
+        <TrainingChoose displayResume={id1}/>
         <Button onClick={() => setValue(1)} style={{padding:"1%"}} variant="contained" color="primary">
             Done
         </Button>  

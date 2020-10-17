@@ -53,6 +53,10 @@ export default class AddCSV extends Component {
     console.log('---------------------------')
   }
 
+  sendData = () => {
+    this.props.parentCallback(this.state.data[this.state.id1]);
+  }
+
   render() {
     {console.log("this.state.id1", this.state.data[this.state.id1])}
     return (
@@ -67,6 +71,7 @@ export default class AddCSV extends Component {
           <span>Drop CSV file here or click to upload.</span>
         </CSVReader>
         <p>{this.state.responseToPost}</p>
+        <Button onClick={this.sendData}>Next</Button>
       </>
     )
   }
