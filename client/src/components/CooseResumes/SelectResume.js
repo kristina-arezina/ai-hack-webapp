@@ -44,7 +44,7 @@ export default function CheckboxesGroup() {
             <FormControlLabel
               control={<Checkbox style={{color: "#003c8f"}} checked={gilad} onChange={handleChange} name="gilad" />}
               label={
-                <Button style={{textTransform: "capitalize"}} edge="end" aria-label="comments">
+                <Button href="https://docs.google.com/document/d/1nLMbVYZuuquVU7w4qaxQILdWZaDp1oXy5M2IRyDK9pw/edit?usp=sharing" target="_blank" style={{textTransform: "capitalize"}} edge="end" aria-label="comments">
                 <p>Candidate 1</p>
                  <OpenInNewIcon/>
                </Button>
@@ -54,7 +54,7 @@ export default function CheckboxesGroup() {
             <FormControlLabel
               control={<Checkbox style={{color: "#003c8f"}} checked={jason} onChange={handleChange} name="jason" />}
               label={
-                <Button href="https://www.w3schools.com/html/html_links.asp" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
+                <Button href="https://docs.google.com/document/d/1nLMbVYZuuquVU7w4qaxQILdWZaDp1oXy5M2IRyDK9pw/edit?usp=sharing" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
                 <p>Candidate 2</p>
                  <OpenInNewIcon/>
                </Button>
@@ -64,7 +64,7 @@ export default function CheckboxesGroup() {
             <FormControlLabel
               control={<Checkbox style={{color: "#003c8f"}} checked={antoine} onChange={handleChange} name="antoine" />}
               label={
-                <Button style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
+                <Button href="https://docs.google.com/document/d/1FKh_dszQCZ440FDRIWeUopptFIaZt3_sdQCB8OPVykU/edit?usp=sharing" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
                 <p>Candidate 3</p>
                  <OpenInNewIcon/>
                </Button>
@@ -74,7 +74,7 @@ export default function CheckboxesGroup() {
             <FormControlLabel
               control={<Checkbox style={{color: "#003c8f"}} checked={kristina} onChange={handleChange} name="kristina" />}
               label={
-                <Button style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
+                <Button href="https://docs.google.com/document/d/1OEz_X9IyLDXr7ANOiZANCKx47WLloX0hsDYTopMfJaU/edit?usp=sharing" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
                 <p>Candidate 4</p>
                  <OpenInNewIcon/>
                </Button>
