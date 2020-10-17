@@ -40,10 +40,10 @@ export default function RankingList() {
           <Filter1Icon/>
     </ListItemAvatar>
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea href="https://docs.google.com/document/d/144VFARrTOFjBkTCGzJ2oj0-BVT4akh-gJAh4Wp0fLkI/edit?usp=sharing" target="_blank">
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Teo Mackenzie
+            Ramanpreet Kaur
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Ranked as the most qualified. 
@@ -51,7 +51,7 @@ export default function RankingList() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button href="https://docs.google.com/document/d/144VFARrTOFjBkTCGzJ2oj0-BVT4akh-gJAh4Wp0fLkI/edit?usp=sharing" target="_blank" size="small" color="primary">
           Resume
         </Button>
       </CardActions>
@@ -63,10 +63,10 @@ export default function RankingList() {
           <Filter2Icon/>
     </ListItemAvatar>
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea href="https://docs.google.com/document/d/17jHXruJ6gyxRoPxtfoTjg5RdSuJj6vHQljyQbxIr3g0/edit?usp=sharing" target="_blank">
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Greg Davis 
+          Yakeen Y. Gazi  
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Ranked as the second the most qualified. 
@@ -74,7 +74,7 @@ export default function RankingList() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button href="https://docs.google.com/document/d/17jHXruJ6gyxRoPxtfoTjg5RdSuJj6vHQljyQbxIr3g0/edit?usp=sharing" target="_blank" size="small" color="primary">
           Resume
         </Button>
       </CardActions>
