@@ -32,6 +32,7 @@ export default function CheckboxesGroup() {
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
+    
   };
 
     const { gilad, jason, antoine, kristina } = state;
