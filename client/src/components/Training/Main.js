@@ -66,9 +66,11 @@ export default function MainTrain() {
   const [id2, setId2Data] = React.useState([]);
 
   const callbackFunction = (childData) => {
-    setId1Data(childData.data);
-    console.log("childData", childData[0])
-    console.log("childData", childData[1])
+    setId1Data(childData[0].data);
+    setId2Data(childData[1].data);
+    // setId2Data(childData[1]);
+    console.log("childData", childData[0].data)
+    console.log("childData", childData[1].data)
   }
 
   useEffect(() => {

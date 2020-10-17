@@ -94,8 +94,7 @@ export default function CheckboxesGroup(props) {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          HELLO
           </Typography>
         </AccordionDetails>
       </Accordion>
