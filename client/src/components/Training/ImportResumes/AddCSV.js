@@ -12,20 +12,24 @@ export default class AddCSV extends Component {
   };
 
   handleOnDrop = (data) => {
+
     console.log('---------------------------')
     console.log("data", data)
     this.setState({ data: data })
-    axios.post('http://localhost:6001/api/world', {
-      data: this.state.data,
-    })
+    
+    let axiosConfig = {
+      headers: {
+          "Access-Control-Allow-Origin": "*",
+      }
+    };
+    
+    axios.post('http://localhost:6001/api/world', data, axiosConfig)
     .then((res) => {
-      console.log(res.data);
-
-      // let response = res.data
-      // this.setState({ responseToPost: response });
-    }, (error) => {
-      console.log(error);
-    });
+      console.log("RESPONSE RECEIVED: ", res.data);
+    })
+    .catch((err) => {
+      console.log("AXIOS ERROR: ", err);
+    })
 
     console.log('---------------------------')
   }
