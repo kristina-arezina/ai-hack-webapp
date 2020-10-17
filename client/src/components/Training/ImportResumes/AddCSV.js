@@ -8,7 +8,9 @@ export default class AddCSV extends Component {
     response: '',
     post: '',
     responseToPost: '',
-    data: []
+    data: [],
+    id1: '',
+    id2: ''
   };
 
   handleOnDrop = (data) => {
@@ -27,7 +29,12 @@ export default class AddCSV extends Component {
     
     axios.post('http://localhost:6001/api/world', data, axiosConfig)
     .then((res) => {
-      console.log("RESPONSE RECEIVED: ", res.data);
+      console.log("RESPONSE RECEIVED: ", res.data.ids[0]);
+      let id1 = res.data.ids[0]
+      console.log("id1", id1)
+      let id2 = res.data.ids[1]
+      this.setState({id1:id1 })
+      this.setState({id2:id2 })
     })
     .catch((err) => {
       console.log("AXIOS ERROR: ", err);
@@ -47,6 +54,7 @@ export default class AddCSV extends Component {
   }
 
   render() {
+    {console.log("this.state.id1", this.state.data[this.state.id1])}
     return (
       <>
         <h5>Click and Drag Upload</h5>
