@@ -15,8 +15,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    width:"100%"
+    display: 'relative',
+    width:"100%",
+    height: "100%"
+  }, accordion: {
+    width:"100%",
+    height: "100%"
   },
   formControl: {
     margin: theme.spacing(3),
@@ -33,29 +37,46 @@ const useStyles = makeStyles((theme) => ({
 export default function CheckboxesGroup(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState('female');
-  // const [id1, setId1Data] = React.useState([]);
-
-  // useEffect(() => {
-  //   // Update the document title using the browser API
-  //   setId1Data(this.props.dataParentToChild);
-  // });
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
 
-
-
   return (
     <span>
     <div className={classes.root}>
-    <Accordion>
+    <FormControl component="fieldset" className={classes.formControl}>
+      <FormLabel component="legend">Choose the better candidate on paper</FormLabel>
+      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+            <FormControlLabel
+            value="female"
+              control={<Radio style={{color: "#003c8f"}} name="gilad" />}
+              label={
+                <Button disabled style={{textTransform: "capitalize"}} edge="end" aria-label="comments">
+                <p style={{color: "#003c8f"}}>Candidate 1</p>
+               </Button>
+              }
+            >
+            </FormControlLabel>
+            <FormControlLabel
+            value="male"
+              control={<Radio style={{color: "#003c8f"}}  name="jason" />}
+              label={
+                <Button disabled href="https://www.w3schools.com/html/html_links.asp" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
+                <p style={{color: "#003c8f"}}>Candidate 2</p>
+               </Button>
+              }
+            >
+            </FormControlLabel>
+          </RadioGroup>
+      </FormControl> 
+    <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Accordion 1</Typography>
+          <Typography className={classes.heading}>Candidate 1</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -69,7 +90,7 @@ export default function CheckboxesGroup(props) {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography className={classes.heading}>Accordion 2</Typography>
+          <Typography className={classes.heading}>Candidate 2</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -79,33 +100,7 @@ export default function CheckboxesGroup(props) {
         </AccordionDetails>
       </Accordion>
 
-      <FormControl component="fieldset" className={classes.formControl}>
-      <FormLabel component="legend">Choose the better candidate on paper</FormLabel>
-      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-            <FormControlLabel
-            value="female"
-              control={<Radio style={{color: "#003c8f"}} name="gilad" />}
-              label={
-                <Button style={{textTransform: "capitalize"}} edge="end" aria-label="comments">
-                <p>Candidate 1</p>
-                 <OpenInNewIcon/>
-               </Button>
-              }
-            >
-            </FormControlLabel>
-            <FormControlLabel
-            value="male"
-              control={<Radio style={{color: "#003c8f"}}  name="jason" />}
-              label={
-                <Button href="https://www.w3schools.com/html/html_links.asp" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
-                <p>Candidate 2</p>
-                 <OpenInNewIcon/>
-               </Button>
-              }
-            >
-            </FormControlLabel>
-          </RadioGroup>
-      </FormControl> 
+      
     </div> 
     </span>
   );
