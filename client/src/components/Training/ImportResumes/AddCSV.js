@@ -15,6 +15,8 @@ export default class AddCSV extends Component {
 
     console.log('---------------------------')
     console.log("data", data)
+    console.log("type of data", typeof(data))
+    console.log("type of data", data[30])
     this.setState({ data: data })
     
     let axiosConfig = {
