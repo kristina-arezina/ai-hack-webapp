@@ -34,6 +34,7 @@ export default function CheckboxesGroup({parentCallback2}) {
     setState({ ...state, [event.target.name]: event.target.checked });
     let selectedResumes = Object.entries(state)
     console.log("[one, two, three, four].filter((v) => v)", Object.entries(state))
+    parentCallback2(selectedResumes)
   };
 
     const { one, two, three, four } = state;

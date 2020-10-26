@@ -97,7 +97,7 @@ export default function Main() {
           <h1 style={{ textAlign:"left"}}>Select Resumes</h1>
           <SelectResume parentCallback2={resumes => setResumes(resumes)}/>
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
-            Done
+            Done {resumes}
           </Button>
         </Paper>
       </TabPanel>
