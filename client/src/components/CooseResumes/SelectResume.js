@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function CheckboxesGroup(props) {
+export default function CheckboxesGroup({parentCallback2}) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     one: true,
@@ -29,13 +29,11 @@ export default function CheckboxesGroup(props) {
     three: false,
     four: false,
   });
-  const [resumes, setResumes] = React.useState('')
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
     let selectedResumes = Object.entries(state)
     console.log("[one, two, three, four].filter((v) => v)", Object.entries(state))
-    this.setState({setResumes: selectedResumes})
   };
 
     const { one, two, three, four } = state;

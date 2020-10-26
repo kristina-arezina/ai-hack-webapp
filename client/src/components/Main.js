@@ -77,11 +77,6 @@ export default function Main() {
     setValue(newValue);
   };
 
-  const callbackFunction2 = (childData) => {
-    this.setState({resumes: childData})
-    console.log("this.setState({resumes: childData})", this.state.resumes)
-  }
-
   return (
     <div className={classes.root}>
       <AppBar style={{backgroundColor: "#80d6ff"}} position="static">
@@ -100,7 +95,7 @@ export default function Main() {
         
         <Paper style={{ padding:"2%", marginLeft: "8%", marginRight: "8%", marginTop: "2%", width:"auto"}} elevation={3}>
           <h1 style={{ textAlign:"left"}}>Select Resumes</h1>
-          <SelectResume parentCallback2={callbackFunction2}/>
+          <SelectResume parentCallback2={resumes => setResumes(resumes)}/>
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
             Done
           </Button>
