@@ -31,6 +31,8 @@ const useStyles = makeStyles({
 });
 
 export default function RankingList(props) {
+  const [userResumes, setResumes] = React.useState("");
+  const [userResumesTrue, setTrueResume] = React.useState([]);
   const classes = useStyles();
   const resumes = {
     one: {
@@ -57,8 +59,17 @@ export default function RankingList(props) {
 
   useEffect(() => {
     // Update the document title using the browser API
-    console.log("props.resumes", props.resumes)
+    setResumes(props.resumes);
+    console.log(userResumes.length)
+    // console.log("userResumes", userResumes[1])
   });
+
+  for (var i = 0; i < userResumes.length-1; i++) {
+    let userResumesArray = userResumes[i]
+    if (userResumesArray[1] === true) {
+      console.log("userResumes", userResumesArray[0])
+    }  
+}
 
   return (
 
