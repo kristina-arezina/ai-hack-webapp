@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -30,7 +30,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function RankingList() {
+export default function RankingList(props) {
   const classes = useStyles();
   const resumes = {
     one: {
@@ -55,9 +55,15 @@ export default function RankingList() {
     }
   };
 
+  useEffect(() => {
+    // Update the document title using the browser API
+    console.log("props.resumes", props.resumes)
+  });
+
   return (
 
-    <List className={classes.root}>    
+    <List className={classes.root}>   
+    <p>{props.resumes}</p> 
     <ListItem alignItems="flex-start">
     <ListItemAvatar>
           <Filter1Icon/>

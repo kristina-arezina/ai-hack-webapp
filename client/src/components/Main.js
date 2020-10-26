@@ -111,7 +111,7 @@ export default function Main() {
 
       <TabPanel value={value} index={2} >
       <Paper style={{ padding:"2%", marginLeft: "5%", marginRight: "5%", marginTop: "2%", width:"auto"}} elevation={3}>
-        <RankingList />
+        <RankingList resumes={resumes}/>
       </Paper>
       </TabPanel>
     </div>
