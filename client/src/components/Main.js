@@ -64,6 +64,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Main() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [resumes, setResumes] = React.useState(0);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -74,6 +76,11 @@ export default function Main() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const callbackFunction2 = (childData) => {
+    this.setState({resumes: childData})
+    console.log("this.setState({resumes: childData})", this.state.resumes)
+  }
 
   return (
     <div className={classes.root}>
@@ -93,7 +100,7 @@ export default function Main() {
         
         <Paper style={{ padding:"2%", marginLeft: "8%", marginRight: "8%", marginTop: "2%", width:"auto"}} elevation={3}>
           <h1 style={{ textAlign:"left"}}>Select Resumes</h1>
-          <SelectResume/>
+          <SelectResume parentCallback2={callbackFunction2}/>
           <Button onClick={() => setValue(1)} style={{padding:"1%", margin: "1%"}} variant="contained" color="primary">
             Done
           </Button>

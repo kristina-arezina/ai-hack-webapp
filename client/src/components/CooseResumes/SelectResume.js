@@ -21,29 +21,32 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function CheckboxesGroup() {
+export default function CheckboxesGroup(props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    gilad: true,
-    jason: false,
-    antoine: false,
-    kristina: false,
+    one: true,
+    two: false,
+    three: false,
+    four: false,
   });
+  const [resumes, setResumes] = React.useState('')
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
-    
+    let selectedResumes = Object.entries(state)
+    console.log("[one, two, three, four].filter((v) => v)", Object.entries(state))
+    this.setState({setResumes: selectedResumes})
   };
 
-    const { gilad, jason, antoine, kristina } = state;
-    const error = [gilad, jason, antoine, kristina].filter((v) => v).length !== 2;
+    const { one, two, three, four } = state;
+    const error = [one, two, three, four].filter((v) => v).length !== 2;
 
   return (
     <div className={classes.root}>
       <FormControl required error={error} component="fieldset" className={classes.formControl}>
           <FormGroup>
             <FormControlLabel
-              control={<Checkbox style={{color: "#003c8f"}} checked={gilad} onChange={handleChange} name="gilad" />}
+              control={<Checkbox style={{color: "#003c8f"}} checked={one} onChange={handleChange} name="one" />}
               label={
                 <Button href="https://docs.google.com/document/d/1nLMbVYZuuquVU7w4qaxQILdWZaDp1oXy5M2IRyDK9pw/edit?usp=sharing" target="_blank" style={{textTransform: "capitalize"}} edge="end" aria-label="comments">
                 <p>Candidate 1</p>
@@ -53,7 +56,7 @@ export default function CheckboxesGroup() {
             >
             </FormControlLabel>
             <FormControlLabel
-              control={<Checkbox style={{color: "#003c8f"}} checked={jason} onChange={handleChange} name="jason" />}
+              control={<Checkbox style={{color: "#003c8f"}} checked={two} onChange={handleChange} name="two" />}
               label={
                 <Button href="https://docs.google.com/document/d/1nLMbVYZuuquVU7w4qaxQILdWZaDp1oXy5M2IRyDK9pw/edit?usp=sharing" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
                 <p>Candidate 2</p>
@@ -63,7 +66,7 @@ export default function CheckboxesGroup() {
             >
             </FormControlLabel>
             <FormControlLabel
-              control={<Checkbox style={{color: "#003c8f"}} checked={antoine} onChange={handleChange} name="antoine" />}
+              control={<Checkbox style={{color: "#003c8f"}} checked={three} onChange={handleChange} name="three" />}
               label={
                 <Button href="https://docs.google.com/document/d/1FKh_dszQCZ440FDRIWeUopptFIaZt3_sdQCB8OPVykU/edit?usp=sharing" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
                 <p>Candidate 3</p>
@@ -73,7 +76,7 @@ export default function CheckboxesGroup() {
             >
             </FormControlLabel>
             <FormControlLabel
-              control={<Checkbox style={{color: "#003c8f"}} checked={kristina} onChange={handleChange} name="kristina" />}
+              control={<Checkbox style={{color: "#003c8f"}} checked={four} onChange={handleChange} name="four" />}
               label={
                 <Button href="https://docs.google.com/document/d/1OEz_X9IyLDXr7ANOiZANCKx47WLloX0hsDYTopMfJaU/edit?usp=sharing" target="_blank" style={{textTransform: "capitalize"}}  edge="end" aria-label="comments">
                 <p>Candidate 4</p>
