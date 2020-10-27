@@ -78,6 +78,7 @@ export default function RankingList(props) {
       } 
   }
 
+
   for (var i = 0; i < resumes.length-1; i++) {
     if (newArray[i] === resumes[i].id) {
       console.log("yes", resumes[i])
@@ -85,9 +86,10 @@ export default function RankingList(props) {
       console.log("setResumesTrueArray[0]", setResumesTrueArray[0].name)
     } 
 }
+
   });
 
-  
+
 
   return (
     <List className={classes.root}>   
@@ -100,7 +102,7 @@ export default function RankingList(props) {
       <CardActionArea href="https://docs.google.com/document/d/144VFARrTOFjBkTCGzJ2oj0-BVT4akh-gJAh4Wp0fLkI/edit?usp=sharing" target="_blank">
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {setResumesTrueArray[0].name}
+            Ramanpreet Kaur
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Ranked as the most qualified. 
